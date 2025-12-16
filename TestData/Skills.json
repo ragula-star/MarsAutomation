@@ -1,0 +1,25 @@
+﻿{
+  "Skills": [
+    {
+      "Name": "Automation Testing",
+      "Level": "Expert",
+      "Type": "Positive"
+    },
+    {
+      "Name": "",
+      "Level": "",
+      "Type": "Negative"
+    },
+    {
+      "Name": "SELECT * FROM Users;",
+      "Level": "Beginner",
+      "Type": "SQLInjection"
+    },
+    {
+      "Name": "<script>alert(1)</script>",
+      "Level": "Intermediate",
+      "Type": "XSS"
+    }
+  ]
+}
+

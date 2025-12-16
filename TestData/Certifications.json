@@ -1,0 +1,22 @@
+﻿{
+  "Certifications": [
+    {
+      "Name": "ISTQB",
+      "From": "ISTQB",
+      "Year": "2023",
+      "Type": "Positive"
+    },
+    {
+      "Name": "",
+      "From": "",
+      "Year": "",
+      "Type": "Negative"
+    },
+    {
+      "Name": "DROP TABLE Users;",
+      "From": "ISTQB",
+      "Year": "2023",
+      "Type": "SQLInjection"
+    }
+  ]
+}

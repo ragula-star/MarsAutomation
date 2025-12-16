@@ -1,0 +1,99 @@
+﻿{
+	"PositiveTests": [
+		{
+			"TestCase": "Valid Login",
+			"Email": "ragulau4@gmail.com",
+			"Password": "Ragula1234@",
+			"ExpectedResult": "LoginSuccess"
+		}
+	],
+	"ValidLoginWithLeadingTrailingSpaces": [
+		{
+			"TestCase": "ValidLoginWithLeadingTrailingSpaces",
+			"Email": "  ragulau4@gmail.com  ",
+			"Password": "Ragula1234@!",
+			"ExpectedResult": "LoginSuccess"
+		}
+	],
+
+	"NegativeTests": [
+		{
+			"TestCase": "Invalid Password",
+			"Email": "ragulau4@gmail.com",
+			"Password": "",
+			"ExpectedResult": "InvalidCredentialsd"
+		},
+		{
+			"TestCase": "Invalid Email",
+			"Email": "!@example.com",
+			"Password": "Ragula1234@!",
+			"ExpectedResult": "InvalidCredentials"
+		},
+		{
+			"TestCase": "Empty Email",
+			"Email": "",
+			"Password": "Ragula1234@",
+			"ExpectedResult": "EmailRequired"
+		},
+		{
+			"TestCase": "Empty Password",
+			"Email": "valid.user@example.com",
+			"Password": "",
+			"ExpectedResult": "PasswordRequired"
+		},
+		{
+			"TestCase": "Both Fields Empty",
+			"Email": "",
+			"Password": "",
+			"ExpectedResult": "FieldsRequired"
+		},
+		{
+			"TestCase": "Invalid Email Format",
+			"Email": "invalid-email-format",
+			"Password": "SomePassword",
+			"ExpectedResult": "InvalidEmailFormat"
+		}
+	],
+
+	"SQLInjectionTests": [
+		{
+			"TestCase": "SQL Injection in Email",
+			"Email": "' OR 1=1 --",
+			"Password": "test",
+			"ExpectedResult": "InvalidCredentials"
+		},
+		{
+			"TestCase": "SQL Injection in Password",
+			"Email": "valid.user@example.com",
+			"Password": "' OR '1'='1",
+			"ExpectedResult": "InvalidCredentials"
+		}
+	],
+
+	"DestructiveTests": [
+		{
+			"TestCase": "Script Injection in Email",
+			"Email": "<script>alert('Hacked')</script>",
+			"Password": "test123",
+			"ExpectedResult": "InvalidCredentials"
+		},
+		{
+			"TestCase": "Script Injection in Password",
+			"Email": "valid.user@example.com",
+			"Password": "<script>alert('Hack')</script>",
+			"ExpectedResult": "InvalidCredentials"
+		},
+		{
+			"TestCase": "Very Long Email",
+			"Email": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@test.com",
+			"Password": "ValidPassword123!",
+			"ExpectedResult": "InputTooLong"
+		},
+		{
+			"TestCase": "Very Long Password",
+			"Email": "valid.user@example.com",
+			"Password": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+			"ExpectedResult": "InputTooLong"
+		}
+	]
+}

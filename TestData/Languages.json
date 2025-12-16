@@ -1,0 +1,24 @@
+﻿{
+  "Languages": [
+    {
+      "Name": "English",
+      "Level": "Fluent",
+      "Type": "Positive"
+    },
+    {
+      "Name": "",
+      "Level": "",
+      "Type": "Negative"
+    },
+    {
+      "Name": "DROP TABLE Users;",
+      "Level": "Fluent",
+      "Type": "SQLInjection"
+    },
+    {
+      "Name": "<script>alert(1)</script>",
+      "Level": "Fluent",
+      "Type": "XSS"
+    }
+  ]
+}

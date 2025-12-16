@@ -1,0 +1,28 @@
+﻿{
+  "Educations": [
+    {
+      "University": "MIT",
+      "Country": "USA",
+      "Title": "BSc",
+      "Degree": "Computer Science",
+      "GraduationYear": "2020",
+      "Type": "Positive"
+    },
+    {
+      "University": "",
+      "Country": "",
+      "Title": "",
+      "Degree": "",
+      "GraduationYear": "",
+      "Type": "Negative"
+    },
+    {
+      "University": "DROP TABLE Users;",
+      "Country": "USA",
+      "Title": "BSc",
+      "Degree": "CS",
+      "GraduationYear": "2020",
+      "Type": "SQLInjection"
+    }
+  ]
+}

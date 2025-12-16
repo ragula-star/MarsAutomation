@@ -1,0 +1,10 @@
+﻿{
+  "ManageListingsTests": [
+    {
+      "TestCases": "NoListingsMessage",
+      "ExpectedMessage": "You do not have any service listings!"
+    }
+  ]
+
+  
+}

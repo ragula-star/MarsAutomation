@@ -1,0 +1,8 @@
+﻿{
+  "Notification": [
+    {
+      "TestCase": "No Notification Message",
+      "ExpectedMessage": "You have no notifications"
+    }
+  ]
+}

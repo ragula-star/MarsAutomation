@@ -1,0 +1,169 @@
+﻿{
+  "ShareSkill": [
+    {
+      "TestCase": "Positive - Valid Data",
+      "Title": "Machine Learning Basics",
+      "Description": "I will teach the fundamentals of Machine Learning including supervised, unsupervised, and reinforcement learning.",
+      "Category": "Machine Learning",
+      "SubCategoryValue": "2",
+      "Tags": "MLBasics,AI,Data",
+      "ServiceType": "One-off",
+      "LocationType": "Online",
+      "SkillTrade": "Skill-exchange",
+      "SkillExchange": "Python tutoring",
+      "Active": "Yes",
+      "WorkSamplePath": "C:\\Users\\muthu\\OneDrive\\Pictures\\Screenshots\\Screenshot_2025-12-03.png"
+    },
+
+    {
+      "TestCase": "Negative - Empty Title",
+      "Title": "",
+      "Description": "Valid description but missing title",
+      "Category": "Machine Learning",
+      "SubCategoryValue": "2",
+      "Tags": "ML,AI",
+      "ServiceType": "Hourly",
+      "LocationType": "Online",
+      "SkillTrade": "Skill-exchange",
+      "SkillExchange": "Coding help",
+      "Active": "Yes",
+      "WorkSamplePath": ""
+    },
+
+    {
+      "TestCase": "Negative - Empty Description",
+      "Title": "No Description Test",
+      "Description": "",
+      "Category": "Programming",
+      "SubCategoryValue": "3",
+      "Tags": "Python",
+      "ServiceType": "One-off",
+      "LocationType": "On-site",
+      "SkillTrade": "Credit",
+      "SkillExchange": "",
+      "Active": "No",
+      "WorkSamplePath": ""
+    },
+
+    {
+      "TestCase": "Invalid - Special Characters in Title",
+      "Title": "@@@@####$$$$****",
+      "Description": "Description with special characters allowed or not?",
+      "Category": "Programming",
+      "SubCategoryValue": "1",
+      "Tags": "!@#$%^&*",
+      "ServiceType": "Hourly",
+      "LocationType": "Online",
+      "SkillTrade": "Skill-exchange",
+      "SkillExchange": "!!!???",
+      "Active": "Yes",
+      "WorkSamplePath": ""
+    },
+
+    {
+      "TestCase": "Invalid - Very Long Title (Boundary Test)",
+      "Title": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+      "Description": "Testing maximum limit for title field",
+      "Category": "IT",
+      "SubCategoryValue": "1",
+      "Tags": "LongTagTest",
+      "ServiceType": "One-off",
+      "LocationType": "Online",
+      "SkillTrade": "Skill-exchange",
+      "SkillExchange": "Help",
+      "Active": "Yes",
+      "WorkSamplePath": ""
+    },
+
+    {
+      "TestCase": "SQL Injection Test",
+      "Title": "machine'); DROP TABLE Skills;--",
+      "Description": "Testing SQL injection attempt",
+      "Category": "Hacking",
+      "SubCategoryValue": "5",
+      "Tags": "SQL,Injection",
+      "ServiceType": "Hourly",
+      "LocationType": "Online",
+      "SkillTrade": "Credit",
+      "SkillExchange": "",
+      "Active": "Yes",
+      "WorkSamplePath": ""
+    },
+
+    {
+      "TestCase": "Script Injection - XSS",
+      "Title": "<script>alert('Hacked')</script>",
+      "Description": "<img src=x onerror=alert('XSS')>",
+      "Category": "Web",
+      "SubCategoryValue": "4",
+      "Tags": "<b>bold</b>",
+      "ServiceType": "One-off",
+      "LocationType": "Online",
+      "SkillTrade": "Skill-exchange",
+      "SkillExchange": "<script>alert('XSS')</script>",
+      "Active": "No",
+      "WorkSamplePath": ""
+    },
+
+    {
+      "TestCase": "Invalid - Numbers Only Title",
+      "Title": "123456789",
+      "Description": "Description valid",
+      "Category": "Education",
+      "SubCategoryValue": "2",
+      "Tags": "Numbers",
+      "ServiceType": "Hourly",
+      "LocationType": "Online",
+      "SkillTrade": "Skill-exchange",
+      "SkillExchange": "Teaching",
+      "Active": "Yes",
+      "WorkSamplePath": ""
+    },
+
+    {
+      "TestCase": "Invalid - Tags Exceed Limit",
+      "Title": "Tag Limit Test",
+      "Description": "Testing tag length or count limit",
+      "Category": "IT",
+      "SubCategoryValue": "4",
+      "Tags": "tag1,tag2,tag3,tag4,tag5,tag6,tag7,tag8,tag9",
+      "ServiceType": "Hourly",
+      "LocationType": "On-site",
+      "SkillTrade": "Credit",
+      "SkillExchange": "",
+      "Active": "Yes",
+      "WorkSamplePath": ""
+    },
+
+    {
+      "TestCase": "Invalid - No Tags",
+      "Title": "Missing Tags Test",
+      "Description": "No tags entered",
+      "Category": "Music",
+      "SubCategoryValue": "2",
+      "Tags": "",
+      "ServiceType": "Hourly",
+      "LocationType": "On-site",
+      "SkillTrade": "Skill-exchange",
+      "SkillExchange": "Guitar lesson",
+      "Active": "Yes",
+      "WorkSamplePath": ""
+    },
+
+    {
+      "TestCase": "Invalid - Wrong Category",
+      "Title": "Wrong Category Test",
+      "Description": "Selecting a category that does not exist",
+      "Category": "UnknownCategory",
+      "SubCategoryValue": "10",
+      "Tags": "Check",
+      "ServiceType": "Hourly",
+      "LocationType": "Online",
+      "SkillTrade": "Credit",
+      "SkillExchange": "",
+      "Active": "Yes",
+      "WorkSamplePath": ""
+    }
+  ]
+}
+
