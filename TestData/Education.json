@@ -2,8 +2,8 @@
   "Educations": [
     {
       "University": "MIT",
-      "Country": "USA",
-      "Title": "BSc",
+      "Country": "Thailand",
+      "Title": "B.Sc",
       "Degree": "Computer Science",
       "GraduationYear": "2020",
       "Type": "Positive"
@@ -18,8 +18,8 @@
     },
     {
       "University": "DROP TABLE Users;",
-      "Country": "USA",
-      "Title": "BSc",
+      "Country": "Uruguay",
+      "Title": "BArch",
       "Degree": "CS",
       "GraduationYear": "2020",
       "Type": "SQLInjection"

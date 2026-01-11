@@ -1,0 +1,40 @@
+﻿{
+  "Skills": [
+    {
+      "TestCase": "Search by API skill",
+      "Skill": "api",
+      "Type": "Positive"
+    },
+    {
+      "TestCase": "Search by Selenium skill",
+      "Skill": "selenium",
+      "Type": "Positive"
+    },
+    {
+      "TestCase": "Search by SQL skill",
+      "Skill": "Performance Testing",
+      "Type": "Positive"
+    },
+    {
+      "TestCase": "Search by ML skill",
+      "Skill": "Testing",
+      "Type": "Positive"
+    },
+    {
+      "TestCase": "Search by C# skill",
+      "Skill": "c#",
+      "Type": "Positive"
+    },
+    {
+      "TestCase": "Search invalid skill",
+      "Skill": "kotlin",
+      "Type": "Negative"
+    },
+    {
+      "TestCase": "Search empty skill",
+      "Skill": "",
+      "Type": "Negative"
+    }
+  ]
+
+}

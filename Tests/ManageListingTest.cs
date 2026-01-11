@@ -3,42 +3,52 @@ using MarsAutomation.Models;
 using MarsAutomation.Pages;
 using MarsAutomation.Pages.Components;
 using MarsAutomation.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestPlatform.ObjectModel;
+using NUnit.Framework;
+using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace MarsAutomation.Tests
 {
-    public class ManageListingTest: TestsHooks
+    [TestFixture]
+    public class ManageListingTest : TestsHooks
     {
-        
-        private ManageListingPage _manageListingPage;
-        private ManageListingModel manageListingModel;
+        private ManageListingPage manageListingPage;
+        private ManageListingsComponent manageListingsComponent;
 
         [SetUp]
-        public void setup()
+        public void Setup()
         {
-            
-            _manageListingPage = new ManageListingPage(driver, wait);
-            manageListingModel = new ManageListingModel(driver, wait);
-
+            manageListingPage = new ManageListingPage(driver, wait);
+            manageListingsComponent = new ManageListingsComponent(driver, wait);
         }
 
         [Test]
-        public void VerifyNoListingMessage()
+        public void EditAndDeleteListingFromJson()
         {
-           
-            _manageListingPage.GoToManageListing();
+            manageListingPage.GoToManageListing();
 
-            string jsonpath = "TestData/ManageListing.json";
-            var data = JsonReader.ReadJson<ManageListingRoot>(jsonpath);
-            var testData = data.ManageListingsTests[0];
+            string jsonPath = "TestData/ManageListing.json";
+            var data = JsonReader.ReadJson<ManageListingRoot>(jsonPath);
 
-            string ManageListText = manageListingModel.GetManageListMessage();
-            Assert.That(ManageListText, Is.EqualTo(testData.ExpectedMessage),
-      $"Test '{testData.TestCase}' failed. Expected: '{testData.ExpectedMessage}', but got '{ManageListText}'");
+            foreach (var test in data.ManageListingsTests)
+            {
+                if (test.TestCase == "EditListing")
+                {
+                    
+                    manageListingsComponent.EditListing(test.TitleToEdit, test.UpdatedTitle, test.UpdatedDescription);
+
+                    
+                    wait.WaitForElementVisible(By.XPath("//table[contains(@class,'ui striped table')]"));
+                }
+                else if (test.TestCase == "DeleteListing")
+                {
+                    
+                    manageListingsComponent.DeleteListing(test.TitleToDelete);
+                }
+            }
         }
+
+
     }
 }

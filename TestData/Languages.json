@@ -1,24 +1,50 @@
 ﻿{
-  "Languages": [
-    {
-      "Name": "English",
-      "Level": "Fluent",
-      "Type": "Positive"
-    },
-    {
-      "Name": "",
-      "Level": "",
-      "Type": "Negative"
-    },
-    {
-      "Name": "DROP TABLE Users;",
-      "Level": "Fluent",
-      "Type": "SQLInjection"
-    },
-    {
-      "Name": "<script>alert(1)</script>",
-      "Level": "Fluent",
-      "Type": "XSS"
-    }
-  ]
-}
+  
+    "Languages": [
+      {
+        "Name": "English",
+        "Level": "Fluent",
+        "Type": "Positive"
+      },
+      {
+        "Name": "Spanish",
+        "Level": "Conversational",
+        "Type": "Positive"
+      },
+      {
+        "Name": "French",
+        "Level": "Basic",
+        "Type": "Positive"
+      },
+      {
+        "Name": "",
+        "Level": "",
+        "Type": "Negative"
+      },
+      {
+        "Name": "DROP TABLE Users;",
+        "Level": "Fluent",
+        "Type": "SQLInjection"
+      },
+      {
+        "Name": "<script>alert(1)</script>",
+        "Level": "Fluent",
+        "Type": "XSS"
+      },
+      {
+        "Name": "EnglishEnglishEnglishEnglishEnglishEnglishEnglish",
+        "Level": "Fluent",
+        "Type": "Destructive"
+      },
+      {
+        "Name": "中文",
+        "Level": "Fluent",
+        "Type": "Unicode"
+      },
+      {
+        "Name": "12345",
+        "Level": "Fluent",
+        "Type": "Numeric"
+      }
+    ]
+  }

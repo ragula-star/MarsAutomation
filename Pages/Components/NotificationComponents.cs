@@ -19,7 +19,7 @@ namespace MarsAutomation.Pages.Components
             this._wait = _wait;
         }
 
-        private By NotificationEmptyMessage = By.XPath("//div[@class='item active selected' and contains(text(),'no notifications')]");
+        private By NotificationEmptyMessage = By.XPath("//div[@class='item' and contains(text(),'You have no notifications')]");
 
         public string GetEmptyNotificationMessage()
         {
