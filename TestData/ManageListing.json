@@ -1,10 +1,14 @@
 ﻿{
   "ManageListingsTests": [
     {
-      "TestCases": "NoListingsMessage",
-      "ExpectedMessage": "You do not have any service listings!"
+      "TestCase": "EditListing",
+      "TitleToEdit": "TestingAutomate",
+      "UpdatedTitle": "Automation Testing",
+      "UpdatedDescription": "Updated description for automation testing"
+    },
+    {
+      "TestCase": "DeleteListing",
+      "TitleToDelete": "Communication"
     }
   ]
-
-  
 }

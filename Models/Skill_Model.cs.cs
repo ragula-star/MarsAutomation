@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace MarsAutomation.Models
+﻿namespace MarsAutomation.Models
 {
     public class Skill_Model
     {
@@ -11,5 +9,11 @@ namespace MarsAutomation.Models
     {
         public string Name { get; set; }
         public string Level { get; set; }
+        public string Type { get; set; }
+
+        
+        public string OriginalName { get; set; }
+        public string UpdatedName { get; set; }
+        public string UpdatedLevel { get; set; }
     }
 }

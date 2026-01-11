@@ -14,43 +14,66 @@ namespace MarsAutomation.Hooks
     public class TestsHooks
     {
         protected IWebDriver driver;
+        protected WaitHelpers wait;
+        protected Loginpage loginpage;
+        protected ProfilePage profilePage;
+
         private ExtentReports _extent;
         private ExtentTest _test;
-
-        protected Loginpage loginpage;
-        protected WaitHelpers wait;
 
         [OneTimeSetUp]
         public void BeforeAllTests()
         {
-            // Create Reports folder
             string reportsDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Reports");
             Directory.CreateDirectory(reportsDir);
 
-            // Initialize ExtentReports with SparkReporter
-            string reportPath = Path.Combine(reportsDir, "AutomationReport.html");
-            var sparkReporter = new ExtentSparkReporter(reportPath);
-            sparkReporter.Config.DocumentTitle = "Mars Automation Report";
-            sparkReporter.Config.ReportName = "Mars Project Test Results";
+            var reporter = new ExtentSparkReporter(Path.Combine(reportsDir, "AutomationReport.html"));
+            reporter.Config.DocumentTitle = "Mars Automation Report";
+            reporter.Config.ReportName = "Mars Automation Results";
 
             _extent = new ExtentReports();
-            _extent.AttachReporter(sparkReporter);
+            _extent.AttachReporter(reporter);
         }
 
         [SetUp]
         public void BeforeEachTest()
         {
-            // Initialize WebDriver
             driver = CommonDriver.InitializeDriver("Chrome");
             wait = new WaitHelpers(driver);
-            loginpage = new Loginpage(driver, wait);
+
             driver.Navigate().GoToUrl(ConfigReader.Get("BaseUrl"));
 
-            // Common pre-step: open login page
+            loginpage = new Loginpage(driver, wait);
             loginpage.Clicklogin();
             loginpage.Emaillogin(ConfigReader.Username, ConfigReader.Password);
 
-            // Create test in ExtentReports
+            profilePage = new ProfilePage(driver, wait);
+
+
+            var categories = TestContext.CurrentContext.Test.Properties["Category"];
+
+            profilePage.GoToProfile();
+
+            if (categories.Contains("Skill"))
+            {
+                TryCleanup(() => profilePage.Skills.ClearAllSkills());
+            }
+
+            if (categories.Contains("Education"))
+            {
+                TryCleanup(() => profilePage.Educations.ClearAllEducations());
+            }
+
+            if (categories.Contains("Certification"))
+            {
+                TryCleanup(() => profilePage.Certifications.ClearAllCertifications());
+            }
+
+            if (categories.Contains("Language"))
+            {
+                TryCleanup(() => profilePage.Languages.ClearAllLanguages());
+            }
+
             _test = _extent.CreateTest(TestContext.CurrentContext.Test.Name);
         }
 
@@ -62,8 +85,9 @@ namespace MarsAutomation.Hooks
 
             if (status == NUnit.Framework.Interfaces.TestStatus.Failed)
             {
-                string screenshotPath = ScreenshotHelper.CaptureScreenshot(driver, testName);
-                _test.Fail("Test Failed", MediaEntityBuilder.CreateScreenCaptureFromPath(screenshotPath).Build());
+                string screenshot = ScreenshotHelper.CaptureScreenshot(driver, testName);
+                _test.Fail("Test Failed",
+                    MediaEntityBuilder.CreateScreenCaptureFromPath(screenshot).Build());
             }
             else if (status == NUnit.Framework.Interfaces.TestStatus.Passed)
             {
@@ -73,24 +97,28 @@ namespace MarsAutomation.Hooks
             {
                 _test.Skip("Test Skipped");
             }
-
-            // Dispose driver
             driver.Dispose();
             driver?.Quit();
             driver = null;
-
+        }
+        private void TryCleanup(Action cleanupAction)
+        {
+            try
+            {
+                cleanupAction.Invoke();
+            }
+            catch (Exception ex)
+            {
+                TestContext.WriteLine($"Cleanup skipped safely: {ex.Message}");
+            }
         }
 
-
+       
         [OneTimeTearDown]
         public void AfterAllTests()
         {
-            // Flush ExtentReports
             _extent.Flush();
-            
         }
-       
 
     }
 }
-
