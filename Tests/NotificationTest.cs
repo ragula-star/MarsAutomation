@@ -38,11 +38,7 @@ namespace MarsAutomation.Tests
 
             
             string actualMessage = notificationPage.notificationComponents.GetEmptyNotificationMessage();
-
-
-            
-            Assert.AreEqual(expectedMessage, actualMessage,
-                "Notification empty message does not match expected value");
+           Assert.AreEqual(expectedMessage, actualMessage,"Notification empty message does not match expected value");
         }
 
     }

@@ -64,8 +64,6 @@ namespace MarsAutomation.Pages.Components
             ));
             return valueSpan.Text.Trim(); 
         }
-
-
-    }
+     }
 
 }

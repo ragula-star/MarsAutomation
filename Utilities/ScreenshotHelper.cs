@@ -10,17 +10,17 @@ namespace Utilities
         {
             try
             {
-                
+
                 string folderPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Screenshots");
                 if (!Directory.Exists(folderPath))
                 {
                     Directory.CreateDirectory(folderPath);
                 }
 
-                
+
                 string filePath = Path.Combine(folderPath, $"{testName}_{DateTime.Now:yyyyMMdd_HHmmss}.png");
 
-                
+
                 Screenshot screenshot = ((ITakesScreenshot)driver).GetScreenshot();
                 File.WriteAllBytes(filePath, screenshot.AsByteArray);
 

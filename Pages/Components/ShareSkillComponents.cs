@@ -14,15 +14,15 @@ namespace MarsAutomation.Pages.Components
     {
         private IWebDriver driver;
         private WaitHelpers _wait;
-        
+
 
         public ShareSkillComponents(IWebDriver driver, WaitHelpers _wait)
         {
             this.driver = driver;
             this._wait = _wait;
-             
+
         }
-        
+
         private By FillShareSkillTitle => By.XPath("//input[@placeholder='Write a title to describe the service you provide.']");
         private By FillShareSkillDiscription => By.XPath("//textarea[@placeholder='Please tell us about any hobbies, additional expertise, or anything else you’d like to add.']");
         private By FillShareSkillCategory => By.XPath("//select[@name='categoryId']");
@@ -42,7 +42,7 @@ namespace MarsAutomation.Pages.Components
             _wait.WaitForElementVisible(FillShareSkillTitle).SendKeys(title);
             _wait.WaitForElementVisible(FillShareSkillDiscription).SendKeys(description);
         }
-        public void ShareskillCategory() 
+        public void ShareskillCategory()
         {
 
             SelectElement select = new SelectElement(driver.FindElement(FillShareSkillCategory));
@@ -58,24 +58,24 @@ namespace MarsAutomation.Pages.Components
 
             var tagInput = _wait.WaitForElementVisible(FillShareSkillTags);
 
-            
+
             var tagsArray = tags.Split(',');
 
             foreach (var tag in tagsArray)
             {
                 tagInput.SendKeys(tag.Trim());
-                tagInput.SendKeys(Keys.Enter); 
+                tagInput.SendKeys(Keys.Enter);
                 Thread.Sleep(3000);
             }
         }
-        public void ShareSkillServiceType() 
+        public void ShareSkillServiceType()
 
         {
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
             js.ExecuteScript("arguments[0].scrollIntoView({block: 'center'});",
                   driver.FindElement(FillShareSkillServiceType));
 
-           
+
             _wait.WaitForElementClickable(FillShareSkillServiceType).Click();
 
 
@@ -88,26 +88,26 @@ namespace MarsAutomation.Pages.Components
         {
             IWebElement tradeElement = driver.FindElement(FillShareSkillTrade);
 
-            
+
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
             js.ExecuteScript("arguments[0].scrollIntoView(true);", tradeElement);
 
-            
+
             _wait.WaitForElementClickable(FillShareSkillTrade).Click();
         }
         public void ShareSkillExchange(string skillexchange)
         {
-             var skill =_wait.WaitForElementVisible(FillShareSkillSkillExchange);
-             skill.SendKeys(skillexchange);
-             skill.SendKeys(Keys.Enter);
+            var skill = _wait.WaitForElementVisible(FillShareSkillSkillExchange);
+            skill.SendKeys(skillexchange);
+            skill.SendKeys(Keys.Enter);
         }
         public void ShareSkillWorkSample()
         {
             IWebElement label = driver.FindElement(FillShareSkillWorkSample);
             ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView(true);", label);
-            label.Click(); 
+            label.Click();
 
-            
+
             IWebElement fileInput = driver.FindElement(By.Id("selectFile"));
             fileInput.SendKeys(@"C:\Users\muthu\OneDrive\Pictures\developer-8829735_1280.jpg");
 

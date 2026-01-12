@@ -37,7 +37,6 @@ namespace MarsAutomation.Tests
 
             bool isLoginSuccess = loginpage.verifylogo(); 
             Assert.That(isLoginSuccess, Is.EqualTo(TestData.ExpectedResult == "LoginSuccess"));
-
         }
         [Test]
         public void ValidLoginwithLeading()
@@ -49,8 +48,6 @@ namespace MarsAutomation.Tests
             string message = loginpage.invalidEmailText();
             Assert.That(message, Does
                 .Contain("Please enter a valid email address"));
-
-
         }
         [Test]
         public void InvalidTest()
@@ -110,10 +107,7 @@ namespace MarsAutomation.Tests
             }
         }
 
-
-
-
-        [Test]
+       [Test]
         public void SQLInjectionTests()
         {
             string jsonpath = "TestData/login.json";

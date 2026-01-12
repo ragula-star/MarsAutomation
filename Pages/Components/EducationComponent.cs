@@ -87,19 +87,19 @@ namespace MarsAutomation.Pages.Components
                 try
                 {
                     deleteButtons[0].Click();
-                    System.Threading.Thread.Sleep(500); // small wait for UI refresh
-                    deleteButtons = driver.FindElements(DeleteButtons); // refresh list
+                    System.Threading.Thread.Sleep(500); 
+                    deleteButtons = driver.FindElements(DeleteButtons); 
                 }
                 catch (StaleElementReferenceException)
                 {
-                    deleteButtons = driver.FindElements(DeleteButtons); // retry on stale
+                    deleteButtons = driver.FindElements(DeleteButtons); 
                 }
                 catch (ElementNotInteractableException)
                 {
                     ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView(true);", deleteButtons[0]);
                     deleteButtons[0].Click();
                     System.Threading.Thread.Sleep(500);
-                    deleteButtons = driver.FindElements(DeleteButtons); // refresh
+                    deleteButtons = driver.FindElements(DeleteButtons); 
                 }
             }
         }

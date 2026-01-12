@@ -6,7 +6,7 @@ namespace MarsAutomation.Utilities
     {
         private static Dictionary<string, string> _config;
 
-        
+
         static ConfigReader()
         {
             string jsonPath = Path.Combine(Directory.GetCurrentDirectory(), "TestData", "appsettings.json");
@@ -19,7 +19,6 @@ namespace MarsAutomation.Utilities
             return _config.ContainsKey(key) ? _config[key] : null;
         }
 
-       
         public static string BaseUrl => Get("BaseUrl");
         public static string Browser => Get("Browser");
         public static string Username => Get("Username");

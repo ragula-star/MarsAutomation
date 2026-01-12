@@ -118,13 +118,13 @@ namespace MarsAutomation.Pages.Components
                 }
                 catch (StaleElementReferenceException)
                 {
-                    // DOM refreshed → re-fetch buttons
+                   
                     ClearAllSkills();
                     return;
                 }
                 catch (ElementNotInteractableException)
                 {
-                    // Skip non-interactable elements
+                   
                     continue;
                 }
             }
