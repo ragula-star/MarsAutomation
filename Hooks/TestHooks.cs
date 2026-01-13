@@ -23,11 +23,11 @@ namespace MarsAutomation.Hooks
         [OneTimeSetUp]
         public void BeforeAllTests()
         {
-            // Create Reports folder
+           
             string reportsDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Reports");
             Directory.CreateDirectory(reportsDir);
 
-            // Initialize ExtentReports with SparkReporter
+           
             string reportPath = Path.Combine(reportsDir, "AutomationReport.html");
             var sparkReporter = new ExtentSparkReporter(reportPath);
             sparkReporter.Config.DocumentTitle = "Mars Automation Report";
@@ -40,17 +40,17 @@ namespace MarsAutomation.Hooks
         [SetUp]
         public void BeforeEachTest()
         {
-            // Initialize WebDriver
+          
             driver = CommonDriver.InitializeDriver("Chrome");
             wait = new WaitHelpers(driver);
             loginpage = new Loginpage(driver, wait);
             driver.Navigate().GoToUrl(ConfigReader.Get("BaseUrl"));
 
-            // Common pre-step: open login page
+           
             loginpage.Clicklogin();
             loginpage.Emaillogin(ConfigReader.Username, ConfigReader.Password);
 
-            // Create test in ExtentReports
+            
             _test = _extent.CreateTest(TestContext.CurrentContext.Test.Name);
         }
 
@@ -74,7 +74,7 @@ namespace MarsAutomation.Hooks
                 _test.Skip("Test Skipped");
             }
 
-            // Dispose driver
+            
             driver.Dispose();
             driver?.Quit();
             driver = null;
@@ -85,7 +85,7 @@ namespace MarsAutomation.Hooks
         [OneTimeTearDown]
         public void AfterAllTests()
         {
-            // Flush ExtentReports
+            
             _extent.Flush();
             
         }
