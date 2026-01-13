@@ -13,9 +13,9 @@ namespace MarsAutomation.Base
         {
             
             {
-                driver = CommonDriver.InitializeDriver("Chrome"); // pass Chrome (or Firefox)
+                driver = CommonDriver.InitializeDriver("Chrome"); 
                 driver.Manage().Window.Maximize();
-                driver.Navigate().GoToUrl(ConfigReader.Get("BaseUrl")); // Use ConfigReader
+                driver.Navigate().GoToUrl(ConfigReader.Get("BaseUrl")); 
             }
 
         }
