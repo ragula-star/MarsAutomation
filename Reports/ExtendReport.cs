@@ -34,8 +34,7 @@ namespace MarsAutomation.Reports
             return _test;
         }
 
-       
-        public static void LogPass(string message)
+       public static void LogPass(string message)
         {
             _test?.Pass(message);
         }
