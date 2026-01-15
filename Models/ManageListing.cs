@@ -9,8 +9,19 @@ namespace MarsAutomation.Models
     public class ManageListing
     {
         public string TestCase { get; set; }
+
+       
+        public string TitleToEdit { get; set; }
+        public string UpdatedTitle { get; set; }
+        public string UpdatedDescription { get; set; }
+
+        
+        public string TitleToDelete { get; set; }
+
+        
         public string ExpectedMessage { get; set; }
     }
+
     public class ManageListingRoot()
     {
         public List<ManageListing> ManageListingsTests { get; set; }

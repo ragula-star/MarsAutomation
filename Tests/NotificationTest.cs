@@ -27,6 +27,8 @@ namespace MarsAutomation.Tests
             
             notificationPage.GoToNotification();
 
+           
+            string jsonPath = "TestData/Notification.json";
             
             string jsonPath = "TestData/notification.json";
 
@@ -36,6 +38,11 @@ namespace MarsAutomation.Tests
             string expectedMessage =
                 jsonData["Notification"][0].ExpectedMessage;
 
+            
+            string actualMessage = notificationPage.notificationComponents.GetEmptyNotificationMessage();
+
+
+            
            
             string actualMessage = notificationPage.notificationComponents.GetEmptyNotificationMessage();
 

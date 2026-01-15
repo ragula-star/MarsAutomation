@@ -9,5 +9,6 @@ namespace MarsAutomation.Utilities
             string json = File.ReadAllText(filePath);
             return JsonSerializer.Deserialize<T>(json);
         }
+        
     }
 }

@@ -14,5 +14,6 @@ namespace MarsAutomation.Models
         public string Title { get; set; }
         public string Degree { get; set; }
         public string GraduationYear { get; set; }
+        public string Type { get; set; }
     }
 }

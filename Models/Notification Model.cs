@@ -11,7 +11,5 @@ namespace MarsAutomation.Models
     {
         public string TestCase { get; set; }
         public string ExpectedMessage { get; set; }
-
-       
     }
 }

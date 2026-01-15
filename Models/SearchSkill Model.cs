@@ -1,16 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace MarsAutomation.Models
 {
     public class SearchSkill_Model
     {
-        public string Keyword { get; set; }
-        public string Category { get; set; }
-        public string SubCategory { get; set; }
-        public string Filter { get; set; }
+        public List<SearchSkillData> Skills { get; set; } = new();
+    }
+
+
+    public class SearchSkillData
+    {
+        public string TestCase { get; set; }
+        public string Skill { get; set; }
+        public string Type { get; set; }
     }
 }

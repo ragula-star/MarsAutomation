@@ -10,6 +10,7 @@ namespace MarsAutomation.Reports
         private static ExtentReports? _extent;
         private static ExtentTest? _test;
 
+       
         
         public static ExtentReports GetReporter()
         {
@@ -34,11 +35,14 @@ namespace MarsAutomation.Reports
             return _test;
         }
 
+       
+        public static void LogPass(string message)
        public static void LogPass(string message)
         {
             _test?.Pass(message);
         }
 
+        
        
         public static void LogFail(string message, string? screenshotPath = null)
         {

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -10,14 +10,36 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Tests\SkillTest.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="TestData\AboutMe.json" />
     <None Remove="TestData\appsettings.json" />
+    <None Remove="TestData\Certifications.json" />
+    <None Remove="TestData\Education.json" />
+    <None Remove="TestData\Languages.json" />
     <None Remove="TestData\login.json" />
     <None Remove="TestData\ManageListing.json" />
+    <None Remove="TestData\Notification.json" />
+    <None Remove="TestData\searchSkill.json" />
     <None Remove="TestData\ShareSkill.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="TestData\AboutMe.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestData\appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\Certifications.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\Education.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\Languages.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="TestData\login.json">
@@ -26,9 +48,16 @@
     <Content Include="TestData\ManageListing.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="TestData\Notification.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestData\searchSkill.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestData\ShareSkill.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Tests\SkillTest.cs" />
   </ItemGroup>
 
   <ItemGroup>

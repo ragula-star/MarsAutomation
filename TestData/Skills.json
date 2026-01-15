@@ -19,7 +19,16 @@
       "Name": "<script>alert(1)</script>",
       "Level": "Intermediate",
       "Type": "XSS"
+    },
+    {
+      "Type": "Edit",
+      "OriginalName": "Automation Testing",
+      "UpdatedName": "Automation Testing Updated",
+      "UpdatedLevel": "Intermediate"
+    },
+    {
+      "Type": "Delete",
+      "Name": "Automation Testing Updated"
     }
   ]
 }
-

@@ -21,6 +21,5 @@ namespace MarsAutomation.Models
         public List<LoginTestCase> NegativeTests { get; set; }
         public List<LoginTestCase> SQLInjectionTests { get; set; }
         public List<LoginTestCase> DestructiveTests { get; set; }
-
-    }
+        }
 }

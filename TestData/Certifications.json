@@ -1,22 +1,73 @@
 ﻿{
   "Certifications": [
     {
-      "Name": "ISTQB",
+      "TestCase": "Add Certification - Positive",
+      "Name": "ISTQB Foundation",
       "From": "ISTQB",
       "Year": "2023",
       "Type": "Positive"
     },
     {
+      "TestCase": "Add Certification - Positive Another",
+      "Name": "AWS Solutions Architect",
+      "From": "Amazon",
+      "Year": "2022",
+      "Type": "Positive"
+    },
+    {
+      "TestCase": "Add Certification - Negative Empty Fields",
       "Name": "",
       "From": "",
       "Year": "",
       "Type": "Negative"
     },
     {
+      "TestCase": "Add Certification - Negative Only Year",
+      "Name": "",
+      "From": "",
+      "Year": "2023",
+      "Type": "Negative"
+    },
+    {
+      "TestCase": "Add Certification - Negative Only Name",
+      "Name": "Random Cert",
+      "From": "",
+      "Year": "",
+      "Type": "Negative"
+    },
+    {
+      "TestCase": "Add Certification - SQL Injection",
       "Name": "DROP TABLE Users;",
       "From": "ISTQB",
       "Year": "2023",
       "Type": "SQLInjection"
+    },
+    {
+      "TestCase": "Add Certification - Special Characters",
+      "Name": "@#$%^&*()",
+      "From": "SpecialOrg",
+      "Year": "2023",
+      "Type": "Negative"
+    },
+    {
+      "TestCase": "Add Certification - Long Text",
+      "Name": "CertificationWithAVeryLongNameExceedingNormalLimitsToTestSystemRobustness",
+      "From": "LongOrgNameWithExtraCharactersToTestLimits",
+      "Year": "2023",
+      "Type": "EdgeCase"
+    },
+    {
+      "TestCase": "Delete",
+      "Name": "ISTQB Advanced"
+    },
+    {
+      "TestCase": "Edit Certification",
+      "OriginalName": "ISTQB Foundation",
+      "UpdatedName": "ISTQB Advanced",
+      "UpdatedFrom": "ISTQB",
+      "UpdatedYear": "2024",
+      "Type": "Edit"
     }
   ]
 }
+

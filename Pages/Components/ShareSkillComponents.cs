@@ -58,6 +58,7 @@ namespace MarsAutomation.Pages.Components
 
             var tagInput = _wait.WaitForElementVisible(FillShareSkillTags);
 
+            
            
             var tagsArray = tags.Split(',');
 
@@ -88,6 +89,11 @@ namespace MarsAutomation.Pages.Components
         {
             IWebElement tradeElement = driver.FindElement(FillShareSkillTrade);
 
+            
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].scrollIntoView(true);", tradeElement);
+
+            
            
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
             js.ExecuteScript("arguments[0].scrollIntoView(true);", tradeElement);
@@ -106,6 +112,8 @@ namespace MarsAutomation.Pages.Components
             IWebElement label = driver.FindElement(FillShareSkillWorkSample);
             ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView(true);", label);
             label.Click(); 
+
+            
            
             IWebElement fileInput = driver.FindElement(By.Id("selectFile"));
             fileInput.SendKeys(@"C:\Users\muthu\OneDrive\Pictures\developer-8829735_1280.jpg");

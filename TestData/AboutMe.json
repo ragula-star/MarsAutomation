@@ -1,0 +1,21 @@
+﻿{
+  "AboutMeFields": [
+    {
+      "FieldName": "Availability",
+      "Value": "Part Time",
+      "Type": "Positive"
+    },
+    {
+      "FieldName": "Hours",
+      "Value": "Less than 30hours a week",
+      "Type": "Positive"
+    },
+    {
+      "FieldName": "Earn Target",
+      "Value": "Less than $500 per month",
+      "Type": "Positive"
+    }
+  ]
+
+}
+

@@ -22,8 +22,6 @@ namespace MarsAutomation.Utilities
 
         public IWebElement WaitForElementClickable(By locator)
         {
-            
-
             return _wait.Until(ExpectedConditions.ElementToBeClickable(locator));
         }
 
@@ -31,5 +29,29 @@ namespace MarsAutomation.Utilities
         {
             return _wait.Until(ExpectedConditions.TextToBePresentInElementLocated(locator, text));
         }
+         public bool WaitForText(By locator, string text)
+       {
+          return _wait.Until(ExpectedConditions.TextToBePresentInElementLocated(locator, text));
+        }
+
+       
+        public IList<IWebElement> WaitForElementsVisible(By locator, int timeoutInSeconds = 10)
+        {
+            WebDriverWait localWait = new WebDriverWait(_driver, TimeSpan.FromSeconds(timeoutInSeconds));
+
+            return localWait.Until(d =>
+            {
+                var elements = d.FindElements(locator);
+                return elements.Count > 0 ? elements : null;
+            });
+        }
+        public IWebElement WaitForElementVisible(IWebElement element)
+        {
+            return _wait.Until(driver =>
+                element.Displayed ? element : null
+            );
+        }
+
     }
 }
+
