@@ -28,6 +28,7 @@ namespace MarsAutomation.Pages
         {
             _wait.WaitForElementClickable(ClickNotificationTab).Click();
         }
+        
 
     }
 
