@@ -29,6 +29,10 @@ namespace MarsAutomation.Utilities
         {
             return _wait.Until(ExpectedConditions.TextToBePresentInElementLocated(locator, text));
         }
+         public bool WaitForText(By locator, string text)
+       {
+          return _wait.Until(ExpectedConditions.TextToBePresentInElementLocated(locator, text));
+        }
 
        
         public IList<IWebElement> WaitForElementsVisible(By locator, int timeoutInSeconds = 10)
