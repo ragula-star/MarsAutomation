@@ -24,10 +24,10 @@ namespace MarsAutomation.Tests
         [Test]
         public void Notificationtest()
         {
-            // Act – open notification tab
+            
             notificationPage.GoToNotification();
 
-            // Read JSON test data
+            
             string jsonPath = "TestData/notification.json";
 
             var jsonData = JsonReader.ReadJson
@@ -36,11 +36,11 @@ namespace MarsAutomation.Tests
             string expectedMessage =
                 jsonData["Notification"][0].ExpectedMessage;
 
-            // Get actual message from UI
+           
             string actualMessage = notificationPage.notificationComponents.GetEmptyNotificationMessage();
 
 
-            // Assert
+          
             Assert.AreEqual(expectedMessage, actualMessage,
                 "Notification empty message does not match expected value");
         }
