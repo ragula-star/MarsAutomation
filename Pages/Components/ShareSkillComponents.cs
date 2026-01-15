@@ -59,6 +59,7 @@ namespace MarsAutomation.Pages.Components
             var tagInput = _wait.WaitForElementVisible(FillShareSkillTags);
 
             
+           
             var tagsArray = tags.Split(',');
 
             foreach (var tag in tagsArray)
@@ -93,6 +94,11 @@ namespace MarsAutomation.Pages.Components
             js.ExecuteScript("arguments[0].scrollIntoView(true);", tradeElement);
 
             
+           
+            IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
+            js.ExecuteScript("arguments[0].scrollIntoView(true);", tradeElement);
+
+           
             _wait.WaitForElementClickable(FillShareSkillTrade).Click();
         }
         public void ShareSkillExchange(string skillexchange)
@@ -108,6 +114,7 @@ namespace MarsAutomation.Pages.Components
             label.Click(); 
 
             
+           
             IWebElement fileInput = driver.FindElement(By.Id("selectFile"));
             fileInput.SendKeys(@"C:\Users\muthu\OneDrive\Pictures\developer-8829735_1280.jpg");
 

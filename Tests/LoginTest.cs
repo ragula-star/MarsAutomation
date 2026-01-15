@@ -36,6 +36,7 @@ namespace MarsAutomation.Tests
             loginpage.Emaillogin(TestData.Email, TestData.Password);
 
             bool isLoginSuccess = loginpage.verifylogo(); 
+            bool isLoginSuccess = loginpage.verifylogo();
             Assert.That(isLoginSuccess, Is.EqualTo(TestData.ExpectedResult == "LoginSuccess"));
 
         }
@@ -70,6 +71,7 @@ namespace MarsAutomation.Tests
                 string passwordMessage = loginpage.InvalidpasswordText();
 
                
+                
                 switch (testData.ExpectedResult)
                 {
                     case "InvalidCredentials":
@@ -104,6 +106,7 @@ namespace MarsAutomation.Tests
             }
 
            
+            
             if (failures.Count > 0)
             {
                 Assert.Fail(string.Join(Environment.NewLine, failures));
@@ -130,6 +133,7 @@ namespace MarsAutomation.Tests
                 string passwordMessage = loginpage.InvalidpasswordText();
 
                 
+               
                 if (testData.ExpectedResult == "InvalidCredentials")
                 {
                     if (!emailMessage.Contains("Please enter a valid email address"))

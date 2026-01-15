@@ -29,6 +29,8 @@ namespace MarsAutomation.Tests
 
            
             string jsonPath = "TestData/Notification.json";
+            
+            string jsonPath = "TestData/notification.json";
 
             var jsonData = JsonReader.ReadJson
                 <Dictionary<string, List<Notification_Model>>>(jsonPath);
@@ -41,6 +43,11 @@ namespace MarsAutomation.Tests
 
 
             
+           
+            string actualMessage = notificationPage.notificationComponents.GetEmptyNotificationMessage();
+
+
+          
             Assert.AreEqual(expectedMessage, actualMessage,
                 "Notification empty message does not match expected value");
         }

@@ -20,6 +20,7 @@ namespace MarsAutomation.Pages
             this._wait = wait;
 
             
+          
             Languages = new LanguageComponent(driver, wait);
             Skills = new SkillComponent(driver, wait);
             Educations = new EducationComponent(driver, wait);
