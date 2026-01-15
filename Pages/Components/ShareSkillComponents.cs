@@ -58,13 +58,13 @@ namespace MarsAutomation.Pages.Components
 
             var tagInput = _wait.WaitForElementVisible(FillShareSkillTags);
 
-            // Split tags by comma if multiple
+           
             var tagsArray = tags.Split(',');
 
             foreach (var tag in tagsArray)
             {
                 tagInput.SendKeys(tag.Trim());
-                tagInput.SendKeys(Keys.Enter); // Press Enter after each tag
+                tagInput.SendKeys(Keys.Enter); 
                 Thread.Sleep(3000);
             }
         }
@@ -75,7 +75,7 @@ namespace MarsAutomation.Pages.Components
             js.ExecuteScript("arguments[0].scrollIntoView({block: 'center'});",
                   driver.FindElement(FillShareSkillServiceType));
 
-            // Now wait and click the radio button
+           
             _wait.WaitForElementClickable(FillShareSkillServiceType).Click();
 
 
@@ -88,11 +88,11 @@ namespace MarsAutomation.Pages.Components
         {
             IWebElement tradeElement = driver.FindElement(FillShareSkillTrade);
 
-            // Scroll to the element
+           
             IJavaScriptExecutor js = (IJavaScriptExecutor)driver;
             js.ExecuteScript("arguments[0].scrollIntoView(true);", tradeElement);
 
-            // Wait for clickable and click
+           
             _wait.WaitForElementClickable(FillShareSkillTrade).Click();
         }
         public void ShareSkillExchange(string skillexchange)
@@ -105,9 +105,8 @@ namespace MarsAutomation.Pages.Components
         {
             IWebElement label = driver.FindElement(FillShareSkillWorkSample);
             ((IJavaScriptExecutor)driver).ExecuteScript("arguments[0].scrollIntoView(true);", label);
-            label.Click(); // optional, simulates user clicking the "plus" icon
-
-            // Upload file directly to hidden input
+            label.Click(); 
+           
             IWebElement fileInput = driver.FindElement(By.Id("selectFile"));
             fileInput.SendKeys(@"C:\Users\muthu\OneDrive\Pictures\developer-8829735_1280.jpg");
 
