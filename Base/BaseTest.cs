@@ -25,8 +25,8 @@ namespace MarsAutomation.Base
         {
             driver.Dispose();
             driver?.Quit();
-            
-        }
+        }    
+        
     }
 }
 
