@@ -11,6 +11,7 @@ namespace MarsAutomation.Pages
 {
     public class ShareSkillPage
     {
+        
         private readonly IWebDriver driver;
         private readonly WaitHelpers _wait;
         public ShareSkillComponents shareSkillComponents { get; }
