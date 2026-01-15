@@ -12,5 +12,6 @@ namespace MarsAutomation.Resources
         public static string ScreenshotPath => @"Reports\Screenshots\";
         public static string TestDataPath => @"TestData\";
         public static string ConfigFilePath => @"Utilities\settings.json";
+        
     }
 }
