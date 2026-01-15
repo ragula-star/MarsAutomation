@@ -22,5 +22,6 @@ namespace MarsAutomation.Models
         public string SkillExchange { get; set; }
         public string Active { get; set; }
         public string WorkSamplePath { get; set; }
+        
     }
 }
